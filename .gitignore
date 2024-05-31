@@ -1,0 +1,49 @@
+# Environnements virtuels
+venv/
+.env/
+*.env
+
+# Fichiers compilés Python
+*.pyc
+__pycache__/
+
+# Fichiers de journalisation
+*.log
+
+# Fichiers de base de données SQLite
+*.sqlite3
+
+# Dossiers de configurations d'IDE
+.vscode/
+.idea/
+
+# Fichiers générés par macOS
+.DS_Store
+
+# Fichiers générés par Windows
+Thumbs.db
+
+# Configurations des tests
+.pytest_cache/
+.tox/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+
+# Distribution / paquets
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Paquets d'installation
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Notebooks Jupyter
+.ipynb_checkpoints
+
+# Caches
+*.mypy_cache/
+*.pytest_cache/
