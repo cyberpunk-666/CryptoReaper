@@ -3,8 +3,8 @@ from pykrakenapi import KrakenAPI
 import time
 
 # Configurer le client Kraken avec vos clés API
-api_key = 'YOUR_API_KEY'
-api_secret = 'YOUR_API_SECRET'
+api_key = 'YB4yEgwRW8RJTAl+NKRIluvF4Gh7wCP/OjQDpbM/BEL/klKGK5TDNSBh'
+api_secret = 'uy+9+cTzwtAHL0k9T2Ez9ymx/Fr+O8FZ7cgpZ6g8LjlWDf5cZICCWvkGahbZHy9zQFeEFK5Vw5K+9BzqLtP++Q=='
 
 api = krakenex.API(api_key, api_secret)
 kraken = KrakenAPI(api)
@@ -32,7 +32,8 @@ def main():
 
     while True:
         ticker = kraken.get_ticker_information(pair)
-        current_price = float(ticker['b'][0])  # Prix actuel de l'offre
+        current_price = float(ticker['b'][0][0])  # Prix actuel de l'offre
+        print(f"current_price:{current_price}")
 
         if current_price < buy_price_threshold:
             print(f"Achat de {volume} BTC à {current_price} EUR")
@@ -42,7 +43,7 @@ def main():
             print(f"Vente de {volume} BTC à {current_price} EUR")
             place_order(pair, 'sell', 'limit', volume, current_price)
 
-        time.sleep(60)  # Attendre une minute avant de vérifier à nouveau
+        time.sleep(1)  # Attendre une minute avant de vérifier à nouveau
 
 if __name__ == "__main__":
     main()
